@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Gabrielle Balbino</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Header */
+        header {
+            background-color: #E6E6FA; /* Lavanda claro */
+            color: #333;
+            text-align: center;
+            padding: 2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #FF69B4; /* Rosa vibrante */
+        }
+
+        /* Botão Tema */
+        .theme-button {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            background: none;
+            border: none;
+            color: #333;
+        }
+
+        /* Seções */
+        section {
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #FF69B4; /* Rosa vibrante */
+            margin-bottom: 1rem;
+        }
+
+        .about, .projects, .skills, .contact {
+            margin-top: 3rem;
+        }
+
+        /* Projetos */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border: 2px solid #E6E6FA; /* Lavanda claro */
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #FF69B4; /* Rosa vibrante */
+            font-size: 1.2rem;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: white;
+            background-color: #FF69B4;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .project-card a:hover {
+            background-color: #FF1493;
+        }
+
+        /* Formulário */
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 2px solid #E6E6FA;
+        }
+
+        form button {
+            background-color: #FF69B4;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #FF1493;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #E6E6FA;
+            color: #333;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: #FF69B4;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #FF1493;
+        }
+
+        /* Tema Escuro */
+        body.dark {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        body.dark header {
+            background-color: #444;
+        }
+
+        body.dark .project-card {
+            background-color: #444;
+        }
+
+        body.dark footer {
+            background-color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Gabrielle Balbino</h1>
+        <button class="theme-button" onclick="toggleTheme()">🌓</button>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Sobre Mim -->
+    <section id="about" class="about">
+        <h2>Sobre Mim</h2>
+        <p>Sou Gabrielle Balbino, tecnóloga em Análise e Desenvolvimento de Sistemas, apaixonada por tecnologia e inovação.</p>
+    </section>
+
+    <!-- Seção Projetos 1 -->
+    <section id="projects" class="projects">
+        <h2>Projetos</h2>
+        <div class="projects-container">
+            <div class="project-card" data-aos="fade-up">
+                <img src="https://via.placeholder.com/300x150" alt="Cardápio Online">
+                <h3>Cardápio Online</h3>
+                <p>Sistema interativo para restaurantes, desenvolvido com HTML, CSS e JavaScript.</p>
+                <a href="file:///c%3A/Users/Gaby/OneDrive/%C3%81rea%20de%20Trabalho/portfolio/project.html" target="_blank">Ver Projeto</a>
+            </div>
+            <!-- Adicionar mais projetos -->
+                    <!-- Projeto 2-->
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/300x150" alt="Dashboard de Vendas">
+                        <h3>Dashboard de Vendas</h3>
+                        <p>Gráficos interativos criados com Power BI, analisando métricas de vendas.</p>
+                        <a href="" target="_blank">Ver Projeto</a>
+                    </div>
+            
+                    <!-- Projeto 3 -->
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/300x150" alt="Site Institucional">
+                        <h3>Site Institucional</h3>
+                        <p>Modelo de site para empresas, com design responsivo e moderno.</p>
+                        <a href="file:///c%3A/Users/Gaby/OneDrive/%C3%81rea%20de%20Trabalho/portfolio/project.html" target="_blank">Ver Projeto</a>
+                    </div>
+            
+                    <!-- Projeto 4 -->
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/300x150" alt="Aplicativo de Tarefas">
+                        <h3>Aplicativo de Tarefas</h3>
+                        <p>Aplicativo mobile para organização de tarefas, utilizando React Native.</p>
+                        <a href="https://github.com/seu-projeto" target="_blank">Ver Projeto</a>
+                    </div>
+                    </div>
+            
+                    <!-- Projeto 5 -->
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/300x150" alt="Blog Pessoal">
+                        <h3>Blog Pessoal</h3>
+                        <p>Blog criado com WordPress, focado em compartilhamento de conhecimento técnico.</p>
+                        <a href="https://github.com/seu-projeto" target="_blank">Ver Projeto</a>
+                    </div>
+            
+                    <!-- Projeto 6 -->
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/300x150" alt="Sistema de Gestão">
+                        <h3>Sistema de Gestão</h3>
+                        <p>Ferramenta para controle de estoque e vendas, desenvolvida com Java e MySQL.</p>
+                        <a href="https://github.com/seu-projeto" target="_blank">Ver Projeto</a>
+                    </div>
+                    <!-- Projeto 7-->
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="https://via.placeholder.com/300x150" alt="Landing Page">
+                        <h3>Landing Page</h3>
+                        <p>Página promocional para campanhas de marketing, responsiva e otimizada.</p>
+                        <a href="https://github.com/seu-projeto" target="_blank">Ver Projeto</a>
+                        <section id="projects" class="projects">
+                                <div class="project-card">
+                                    <h3>Sistema de Blog</h3>
+                                    <p>Plataforma para criação e publicação de postagens, com comentários e categorias.</p>
+                                    <a href="https://github.com/seu-usuario/blog-system" class="button" target="_blank">Ver Projeto</a>
+                                </div>
+                                <div class="project-card">
+                                    <h3>Portfólio Interativo</h3>
+                                    <p>Template de portfólio pessoal com animações e design moderno.</p>
+                                    <a href="https://github.com/seu-usuario/portfolio-template" class="button" target="_blank">Ver Projeto</a>
+                                </div>
+                                
+                                <div class="project-card">
+                                    <h3>Jogo da Memória</h3>
+                                    <p>Jogo interativo para praticar a memória, desenvolvido com HTML, CSS e JavaScript.</p>
+                                    <a href="https://github.com/seu-usuario/memory-game" class="button" target="_blank">Ver Projeto</a>
+                                </div>
+                            </div>                 
+            </section>
+            
+        </div>
+    </section>
+    <!-- Contato -->
+    <section id="contact" class="contact">
+        <h2>Contato</h2>
+        <form action="https://formspree.io/f/seu-form-id" method="POST">
+            <input type="text" name="name" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="message" placeholder="Escreva sua mensagem..." required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Gabrielle Balbino</p>
+        <a href="mailto:gabriellebalbino64@gmail.com">Email</a> |
+        <a href="https://linkedin.com/in/seu-perfil">LinkedIn</a> |
+        <a href="https://github.com/seu-usuario">GitHub</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+        }
+    </script>
+</body>
+
+</html>
